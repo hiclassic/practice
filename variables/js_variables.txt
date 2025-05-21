@@ -1,0 +1,68 @@
+###Variables are Containers for Storing Data.
+///Memory Allocation:   
+Memory Address -----------   Value
+Address1    ---------------   37
+Address2
+Address3
+Address4
+Address5
+
+##Variable Declaration: Variables can be declared in 4 ways:
+
+**Automatically:
+x = 5;
+y = 6;
+z = x + y;
+x, y, and z are undeclared variables.
+They are automatically declared when first used:
+
+**Using var:
+var myName;
+myName = 37;
+var myName =37;
+Both are same to declar Variable.
+
+**Using let:
+let x = 5;
+let y = 6;
+let z = x + y;
+
+**Using const:
+const x = 5;
+const y = 6;
+const z = x + y;
+ 
+*The var keyword was used in all JavaScript code from 1995 to 2015.
+*The let and const keywords were added to JavaScript in 2015.
+*The var keyword should only be used in code written for older browsers.
+##When to Use var, let, or const?
+1. Always declare variables
+2. Always use const if the value should not be changed
+3. Always use const if the type should not be changed (Arrays and Objects)
+4. Only use let if you can't use const
+5. Only use var if you MUST support old browsers.
+
+###JavaScript Identifiers: JavaScript identifiers are case-sensitive.
+All JavaScript variables must be identified with unique names.
+These unique names are called identifiers.
+*Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).
+#The general rules for constructing names for variables (unique identifiers) are:
+~Names can contain letters, digits, underscores, and dollar signs.
+~Names must begin with a letter.
+~Names can also begin with $ (var $a; $a = 30;).
+~Names are case sensitive (y and Y are different variables (var = myName, var = MyName)).
+~Reserved words (like JavaScript keywords) cannot be used as names.
+
+
+###The Assignment Operator:
+~In JavaScript, the equal sign (=) is an "assignment" operator, not an "equal to" operator. The "equal to" operator is written like == in JavaScript.
+~This is different from algebra. The following does not make sense in algebra: x = x + 5
+In JavaScript, however, it makes perfect sense: it assigns the value of x + 5 to x.
+(It calculates the value of x + 5 and puts the result into x. The value of x is incremented by 5.)
+
+
+
+
+
+
+

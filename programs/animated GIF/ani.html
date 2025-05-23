@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Looping Star Animation with Text in Circle</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+  <script>
+    let n = 0;
+
+    function setup() {
+      createCanvas(400, 400);
+      frameRate(60);
+      textAlign(CENTER, CENTER); // center text within the ellipse
+      noStroke();
+    }
+
+    function drawStars() {
+      for (let i = 0; i < 70; i++) {
+        fill(255);
+        ellipse(random(0, 400), random(0, 400), 5, 5);
+      }
+    }
+
+    function draw() {
+      background(0);
+      drawStars();
+
+      // Ellipse position
+      const x = n + 100;
+      const y = 250 - n / 2;
+
+      // Draw animated ellipse
+      fill(n, 2 * n, constrain(2.55 * n, 0, 255));
+      ellipse(x, y, n, n);
+
+      // Draw text inside the ellipse
+      fill(255);
+      textSize(n / 5); // scale font size with ellipse size
+      text("Mr. Hares", x, y);
+
+      // Update animation
+      n += 1;
+      if (n > 200) {
+        n = 0;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Big Heart Animation</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+<script>
+  let n = 0;
+
+  function setup() {
+    createCanvas(400, 400);
+    frameRate(60);
+    textAlign(CENTER, CENTER);
+    noStroke();
+  }
+
+  function drawStars() {
+    for (let i = 0; i < 70; i++) {
+      fill(255);
+      ellipse(random(width), random(height), 3, 3);
+    }
+  }
+
+  function drawHeart(cx, cy, scaleFactor) {
+    push();
+    translate(cx, cy);
+    scale(scaleFactor);
+    fill(255, 50, 150);
+    beginShape();
+    for (let t = 0; t < TWO_PI; t += 0.01) {
+      let x = 16 * pow(sin(t), 3);
+      let y = -(13 * cos(t) - 5 * cos(2 * t) - 2 * cos(3 * t) - cos(4 * t));
+      vertex(x, y);
+    }
+    endShape(CLOSE);
+    pop();
+  }
+
+  function draw() {
+    background(0);
+    drawStars();
+
+    const centerX = width / 2;
+    const centerY = height / 2;
+
+    // Bigger heart: animate scale from 0.8 to 2.5
+    let scaleFactor = map(n, 0, 100, 1, 5.5);
+    drawHeart(centerX, centerY, scaleFactor);
+
+    // Text in center of heart
+    fill(255);
+    textSize(5 * scaleFactor);
+    text("Mr. Hares", centerX, centerY);
+
+    // Animate loop
+    n += 1;
+    if (n > 200) n = 0;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator_using_by_switch</title>
+</head>
+
+<body>
+    <h1>calculator_using_by_switch</h1>
+    <script>
+        document.write("Select an Option: \n1. Add \n2. Substract \n3. Multiply \n4. Divide");
+        console.log("Select an Option: \n1. Add \n2. Substract \n3. Multiply \n4. Divide");
+
+        var num1 = prompt("Enter your first number:");
+        var num2 = prompt("Enter your second number:");
+        var option = prompt("Choose an operation:");
+        var result = null;
+
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+        option = parseInt(option);
+
+        var num1Con = isNaN(num1);
+        var num2Con = isNaN(num2);
+        var optionCon = isNaN(option);
+
+        if (num1Con || num2Con || optionCon) {
+            console.log("Invalid Input");
+        } else {
+            switch (option) {
+                case 1:
+                    result = num1 + num2;
+                    break;
+                case 2:
+                    result = num1 - num2;
+                    break;
+                case 3:
+                    result = num1 * num2;
+                    break;
+                case 4:
+                    result = num1 / num2;
+                    break;
+
+                default:
+                    break;  
+            }
+            if (result == null){
+                console.log("No result!");
+                alert("No result!");
+            } else{
+                console.log("Result: " + result);
+                alert("Result: " + result);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

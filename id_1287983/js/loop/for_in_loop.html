@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for_in_loop</title>
+</head>
+<body>
+    <script>
+        // let number = [ 2,6,9,8,7,1,4,9,0];
+        // for ( numbers in number){
+        //     document.write(number[numbers] + "<br>")
+        // }
+        let names = ["asad, ashik, goni, min ,jim"];
+        for ( name of names){
+            document.write(names + "<br>");
+        }
+        let x = prompt("Enter a letter").toLowerCase();
+
+        
+        // let profile = {
+        //     name: "karim",
+        //     age: 25,
+        //     email: "karim123@gmail.com"
+        // }
+        // for ( i in profile){
+        //     document.write(profile[i] + "<br>");
+        // }
+
+         // var a="javascript module";
+    // for(b in a){ //index return or object
+    //     document.write(b+"<br>");
+    //     console.log(b);
+    // }
+
+    var profile={ 
+        name:"karim",
+        age:20,
+        email:"information@gmail.com"
+    }
+
+    for (i in profile){ 
+        document.write(i+"<br>");
+    }
+
+    </script>
+</body>
+</html>

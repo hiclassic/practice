@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding_prime_numbers</title>
+</head>
+<body>
+    <h1>finding_prime_numbers</h1>
+   <script>
+    // for ( let num =2; num <= 100; num++){
+    //     let isPrime = true;
+    //     for ( let i = 2; i <= Math.sqrt(num); i++){
+    //         if ( num % i === 0){
+    //             isPrime = false;
+    //             break;
+    //         }
+    //     }
+    //     if (isPrime){
+    //         document.write(num);
+    //     }
+    // };
+
+
+
+    
+let primes = [];
+
+for (let num = 2; num <= 100; num++) {
+    let isPrime = true;
+
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+
+    if (isPrime) {
+        primes.push(num);
+    }
+}
+
+alert(primes.join(', '));
+
+
+
+
+//     function getPrimesUpTo(limit) {
+//     const primes = [];
+
+//     for (let num = 2; num <= limit; num++) {
+//         let isPrime = true;
+
+//         for (let i = 2; i <= Math.sqrt(num); i++) {
+//             if (num % i === 0) {
+//                 isPrime = false;
+//                 break;
+//             }
+//         }
+
+//         if (isPrime) {
+//             primes.push(num);
+//         }
+//     }
+
+//     return primes;
+// }
+
+// const primesUpTo100 = getPrimesUpTo(100);
+// console.log(primesUpTo100);
+
+
+
+   </script> 
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fibonacci_series</title>
+</head>
+<body>
+    <h1>fibonacci_series</h1>
+<!-- 
+    let a = 0;
+let b = 1;
+
+while (a <= 100) {
+    console.log(a);
+    let next = a + b;
+    a = b;
+    b = next;
+} -->
+
+
+let a = 0;
+let b = 1;
+let fibos = [];
+
+while (a <= 100) {
+    fibos.push(a);
+    let next = a + b;
+    a = b;
+    b = next;
+}
+
+alert(fibos.join(', '));
+
+</body>
+</html>

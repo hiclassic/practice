@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #574657;
+            padding-top: 50px;
+
+
+
+        }
+
+        fieldset {
+            width: 500px;
+            margin: auto;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    </div>
+    <fieldset>
+
+        <form id="dom">
+            ID: <br>
+            <input type="number" name="fID" placeholder="Enter your ID"> <br><br>
+            Name: <br>
+            <input type="text" name="fName" placeholder="Enter your name"> <br><br>
+            Address: <br>
+            <textarea name="fAddress" id="" placeholder="Enter your address"></textarea> <br><br>
+            Round: <br>
+            <select name="fRound">
+                <option>65</option>
+                <option>64</option>
+                <option>63</option>
+            </select>
+            <br><br>
+            Gender: <br>
+            <input name="fG" type="radio" value="Male">Male
+            <input name="fG" type="radio" value="Female">Female
+            <input name="fG" type="radio" value="Others">Others
+            <br><br>
+            Education: <br>
+            <input name="fEdu" type="checkbox" value="SSC">Ssc
+            <input name="fEdu" type="checkbox" value="HSC">Hsc
+            <input name="fEdu" type="checkbox" value="Hons">Hons <br><br>
+            Remark: <br>
+            <textarea name="fRe" id="" placeholder="Enter your remark"></textarea> <br><br>
+
+            <input type="submit" value="Submit">
+
+        </form>
+    </fieldset>
+    </div>
+    <script>
+        class FormValues {
+            constructor(formData) {
+                for (let [name, value] of formData) {
+                    this[name] = formData.getAll(name).join(',');
+                }
+            }
+
+            getData() {
+                var show = "ID: " + this.fID + "<br>";
+                show += "Name: " + this.fName + "<br>";
+                show += "Address: " + this.fAddress + "<br>";
+                show += "Round: " + this.fRound + "<br>";
+                show += "Gender: " + this.fG + "<br>";
+                show += "Education: " + this.fEdu + "<br>";
+                show += "Remark: " + this.fRe + "<br>";
+
+                var n = window.open('', '', 'width=400,height=400');
+                n.document.write(show);
+            }
+
+        }
+        dom.onsubmit = async (e) => {
+            e.preventDefault();
+
+            var fm = document.querySelector('#dom');
+            var form_data = new FormData(fm);
+
+            var f = new FormValues(form_data);
+            f.getData();
+        }
+    </script>
+</body>
+
+</html>

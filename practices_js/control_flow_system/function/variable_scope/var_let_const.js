@@ -30,7 +30,7 @@ function exampleFunction() {
 }
 exampleFunction();  
 // In the example above, the variable `x` is declared using `var`, so it is function-scoped and can be accessed both inside and outside the if block.
-// The variable `y` is declared using `let`, so it is block-scoped and can only be accessed within the if block.
+/   / The variable `y` is declared using `let`, so it is block-scoped and can only be accessed within the if block.
 // The variable `z` is declared using `const`, so it is also block-scoped and cannot be re-assigned.
 // The output demonstrates the differences in variable scope and how `var`, `let`, and `const` behave differently in terms of accessibility
 // and re-assignment.   

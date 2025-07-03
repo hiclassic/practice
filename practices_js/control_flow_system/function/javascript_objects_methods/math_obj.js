@@ -32,7 +32,6 @@ console.log(Math.floor(-4.8)); // Output: -5
 // Math.round(x): Returns the value of x rounded to the nearest integer
 console.log(Math.round(4.5)); // Output: 5
 console.log(Math.round(4.4)); // Output: 4
-// console.log(Math.round(-4.5)); // Output: -4
 console.log(Math.round(-4.6)); // Output: -5
 // Math.max(...values): Returns the largest of the given values
 console.log(Math.max(1, 2, 3)); // Output: 3

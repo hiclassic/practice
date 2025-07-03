@@ -14,10 +14,9 @@ console.log(globalVar); // Output: I am a global variable
 // console.log(localVar); // Uncaught ReferenceError: localVar is not defined (local
 // variable cannot be accessed outside the function)
 // Example of Local and Global Variables with var
-var globalVarWithVar = "I am a global
-variable with var"; // Global variable
+let globalVarWithVar = "I am a global variable with var"; // Global variable
 function exampleFunctionWithVar() {
-    var localVarWithVar = "I am a local variable with var"; // Local variable
+    let localVarWithVar = "I am a local variable with var"; // Local variable
     console.log(localVarWithVar);
 }
 exampleFunctionWithVar(); // Output: I am a local variable with var
@@ -36,9 +35,7 @@ console.log(globalLetVar); // Output: I am a global variable with let
 // (local variable cannot be accessed outside the function)     
 
 // Example of Local and Global Variables with const
-const global
-
-ConstVar = "I am a global variable with const"; // Global variable
+const globalConstVar = "I am a global variable with const"; // Global variable
 function exampleFunctionWithConst() {
     const localConstVar = "I am a local variable with const"; // Local variable
     console.log(localConstVar);

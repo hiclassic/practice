@@ -11,12 +11,13 @@
 
 // Example of variable scope
 function exampleFunction() {
-    var x = 10;
+    let x;
     let y = 20;
     const z = 30;
 
-    if (true) {
-        var x = 40; // Same variable, function-scoped
+    // Example block to demonstrate block scope
+    {
+        x = 40; // Update the same variable, block-scoped with let
         let y = 50; // Different variable, block-scoped
         const z = 60; // Different variable, block-scoped
         console.log(x); // Output: 40
@@ -30,7 +31,7 @@ function exampleFunction() {
 }
 exampleFunction();  
 // In the example above, the variable `x` is declared using `var`, so it is function-scoped and can be accessed both inside and outside the if block.
-/   / The variable `y` is declared using `let`, so it is block-scoped and can only be accessed within the if block.
+// The variable `y` is declared using `let`, so it is block-scoped and can only be accessed within the if block.
 // The variable `z` is declared using `const`, so it is also block-scoped and cannot be re-assigned.
 // The output demonstrates the differences in variable scope and how `var`, `let`, and `const` behave differently in terms of accessibility
 // and re-assignment.   

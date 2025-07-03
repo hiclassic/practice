@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            background-color: rgba(93, 143, 156, 0.207);
+            border-radius: 15px;
+            padding: 15px;
+            width: 50%;
+            margin: 0 auto;
+        }  
+        body{
+            background-color: rgba(93, 143, 156, 0.207);
+        }
+        legend{
+            background-color: rgba(8, 249, 249, 0.207);
+            border-radius: 15px;
+            padding: 15px;
+            width: 50%;
+            margin: 0 auto;
+        }
+        fieldset{
+            background-color: rgba(25, 223, 154, 0.207);
+            border-radius: 15px;
+            padding: 15px;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <legend>Student Registration</legend>
+            <form action="" id = "form1">
+                <label for="name"> Name</label>
+                <input type="text" name="name" id="name" value="" placeholder="Enter your name" required><br><br>
+                <label for="email">Email</label>
+                
+                <input type="email" name="email" id="email" value="" placeholder="Enter your email" required><br><br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" value="" placeholder="Enter your password" required><br><br>
+                <label for="gender">Gender</label>
+                <input type="radio" name="gender" id="male" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="female" required>
+                <label for="female">Female</label><br><br>
+                <label for="education">Education</label><br>
+                <select name="education" id="education">
+                    <option value="SSC">SSC</option>
+                    <option value="HSC">HSC</option>
+                    <option value="BSC">BSC</option>
+                    <option value="MSC">MSC</option>
+                </select><br><br>
+                <label for="courses">Courses</label>
+                <input type="checkbox" name="courses" id="course1" value="course1">
+                <label for="course1">Course 1</label>
+                <input type="checkbox" name="courses" id="course2" value="course2">
+                <label for="course2">Course 2</label>
+                <input type="checkbox" name="courses" id="course3" value="course3">
+                <label for="course3">Course 3</label><br><br>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+        </fieldset>
+    </div>
+    <script>
+        class FormValues{
+            constructor(from){
+                for(let [key] of from){
+                    this[key]=from.getAll(key).join(', ');
+                }
+            }
+            getShow(){
+                var result="Name: "+this.name+"<br>";
+                result+="Email: "+this.email+"<br>";
+                result+="Password: "+this.password+"<br>";
+                result+="Gender: "+this.gender+"<br>";
+                result+="Education: "+this.education+"<br>";
+                result+="Courses: "+this.courses+"<br>";
+                var win=window.open('','','width=400,height=400');
+                win.document.write("Student information:<br><br>"+(result));
+            }
+        }   
+        form1.onsubmit=async(e)=>{
+            e.preventDefault();
+            //user for default event program stop
+            var domcon=document.querySelector('#form1');
+            var obj=new FormData(domcon);
+            
+            var output=new FormValues(obj);
+            output.getShow();
+        }
+    </script>
+</body>
+</html>
